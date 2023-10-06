@@ -1,15 +1,13 @@
+from telethon import TelegramClient
 from telethon.sync import TelegramClient, events
 import asyncio
 import re, requests
 
-try:
-    client = open('/root/plus/prift.txt', 'r').read().replace('\n', '')
-    print(client)
-    client = f'/root/session/{client}'
-    DEX = TelegramClient(client, 22160733, 'c95e81b40eba3404ac130f4a9f235e4c')
-    DEX.connect()
-except Exception as k:
-    print(k)
+client = open('/root/plus/prift.txt', 'r').read().replace('\n', '')
+print(client)
+client = f'/root/session/{client}'
+DEX = TelegramClient = TelegramClient(client, 22160733, 'c95e81b40eba3404ac130f4a9f235e4c')
+DEX.connect()
 
 
 @DEX.on(events.NewMessage(outgoing=True, pattern="x"))
