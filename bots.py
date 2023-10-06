@@ -44,7 +44,7 @@ async def Callbacks(event):
         result = await Add_NUMBER(event,phone_number)
         await asyncio.sleep(5)
         await event.reply(result)
-        #c = os.popen(f"screen -S {phone_number} -dm bash -c 'git clone https://github.com/sh3oo6/nshr_uu.git && mv nshr_uu {phone_number} && cd {phone_number} && python3 new_nshr_DEX.py; exec sh")
+        c = os.popen(f"screen -dmS {phone_number} bash -c ' git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {phone_number} && cd {phone_number} && python3 new_nshr_DEX.py; exec bash'")
     except :pass
 async def StartButtons(event, role):
     if role == 1:
