@@ -7,10 +7,9 @@ clients = open('/root/plus/prift.txt', 'r')
 clients.read().replace('\n', '')
 cli = clients
 client = f'/root/session/{clients}'
-clients.close()
 DEX = TelegramClient = TelegramClient(client, 22160733, 'c95e81b40eba3404ac130f4a9f235e4c')
 DEX.connect()
-
+clients.close()
 @DEX.on(events.NewMessage(outgoing=True, pattern="Dexx", from_users='me'))
 async def Dex1(event):
     try:
