@@ -3,13 +3,12 @@ from telethon.sync import TelegramClient, events
 import asyncio
 import re, requests , os
 
-clients = open('/root/plus/prift.txt', 'r')
-clients.read().replace('\n', '')
-cli = clients
-client = f'/root/session/{clients}'
+client1 = open('/root/plus/prift.txt', 'r')
+client2 = client1.read().replace('\n', '')
+client = f'/root/session/{client1}'
 DEX = TelegramClient = TelegramClient(client, 22160733, 'c95e81b40eba3404ac130f4a9f235e4c')
 DEX.connect()
-clients.close()
+client1.close()
 @DEX.on(events.NewMessage(outgoing=True, pattern="Dexx", from_users='me'))
 async def Dex1(event):
     try:
