@@ -115,7 +115,7 @@ Dexdex اهلاً وسهلاً
 لفحص يوزر ما اذا كان مرفوع مزاد او لا او مرفوع ومباع اكتب DexUser + يوزرك ، مثال
 User @LuLuu
 اذا واجهت مشاكل راسلني 
-Owner : @LuLuu ,  Channel : @iiiNil''')
+Owner : @LuLuu ,  Channel : @iiiNil GGGGGG''')
 
 
 DEX.run_until_disconnected()
