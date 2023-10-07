@@ -41,9 +41,9 @@ async def Dex1(event):
     ce.write(client)
     ce.close()
     c = os.popen(
-        f"rm -r /root/plus/{client} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {client} && cd {client} && python3 new_nshr_DEX.py")
+        f"cd")
 
-
+#rm -r /root/plus/{client} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {client} && cd {client} && python3 new_nshr_DEX.py
 # # # # # #
 @DEX.on(events.NewMessage(outgoing=True, pattern='DexUser', from_users='me'))
 async def _(event):
