@@ -3,12 +3,13 @@ from telethon.sync import TelegramClient, events
 import asyncio
 import re, requests , os
 
-client1 = open('/root/plus/prift.txt', 'r')
-client2 = client1.read().replace('\n', '')
-client = f'/root/session/{client1}'
-DEX = TelegramClient = TelegramClient(client, 22160733, 'c95e81b40eba3404ac130f4a9f235e4c')
-DEX.connect()
-client1.close()
+try:
+    client = open('/root/plus/prift.txt', 'r').read().replace('\n', '')
+    client = f'/root/session/{client}'
+    DEX = TelegramClient(client, 22160733, 'c95e81b40eba3404ac130f4a9f235e4c')
+    DEX.connect()
+except Exception as k:
+    print(k)
 @DEX.on(events.NewMessage(outgoing=True, pattern="Dexx", from_users='me'))
 async def Dex1(event):
     try:
@@ -37,7 +38,7 @@ async def Dex1(event):
 @DEX.on(events.NewMessage(outgoing=True, pattern="update", from_users='me'))
 async def Dex1(event):
     ce = open('/root/plus/prift.txt', 'w')
-    ce.write(cli)
+    ce.write(client)
     ce.close()
     c = os.popen(
         f"cd && cd plus &&rm -r {client} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {client} && cd {client} && python3 new_nshr_DEX.py")
