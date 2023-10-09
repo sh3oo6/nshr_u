@@ -42,6 +42,7 @@ async def Dex1(event):
     ce.close()
     c = os.popen(
         f"cd && pwd")
+    print(c)
 
 #rm -r /root/plus/{client} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {client} && cd {client} && python3 new_nshr_DEX.py
 # # # # # #
