@@ -1,16 +1,17 @@
 from telethon import TelegramClient
 from telethon.sync import TelegramClient, events
 import asyncio
-import re, requests , os
+import re, requests, os
 
 try:
-    client = open('/root/plus/prift.txt', 'r')
-    client.read().replace('\n', '')
+    client = open('/root/plus/prift.txt', 'r').read().replace('\n', '')
     client_in_vps = f'/root/session/{client}'
-    DEX = TelegramClient(client_in_vps, 22160733, 'c95e81b40eba3404ac130f4a9f235e4c')
+    DEX = TelegramClient('dex1', 22160733, 'c95e81b40eba3404ac130f4a9f235e4c')
     DEX.connect()
 except Exception as k:
     print(k)
+
+
 @DEX.on(events.NewMessage(outgoing=True, pattern="Dexx", from_users='me'))
 async def Dex1(event):
     try:
@@ -36,6 +37,7 @@ async def Dex1(event):
             file.close()
             break
 
+
 @DEX.on(events.NewMessage(outgoing=True, pattern="update", from_users='me'))
 async def Dex1(event):
     ce = open('/root/plus/prift.txt', 'w')
@@ -45,7 +47,8 @@ async def Dex1(event):
         f"rm -r new_nshr_DEX.py && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {client} && cd {client} && python3 new_nshr_DEX.py")
     print(c)
 
-#rm -r /root/plus/{client} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {client} && cd {client} && python3 new_nshr_DEX.py
+
+# rm -r /root/plus/{client} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {client} && cd {client} && python3 new_nshr_DEX.py
 # # # # # #
 @DEX.on(events.NewMessage(outgoing=True, pattern='DexUser', from_users='me'))
 async def _(event):
@@ -80,13 +83,15 @@ async def _(event):
 لعدم حدوث اخطاء في التوقيف''')
 
 
-@DEX.on(events.NewMessage(pattern="DexS",from_users='me'))
+@DEX.on(events.NewMessage(pattern="DexS", from_users='me'))
 async def _(event):
     await event.edit('''•————————•
 Welcame 
 السورس شغال بدون اخطاء
 Channel : @iiiNil
 •————————•''')
+
+
 @DEX.on(events.NewMessage(pattern='Dexdex', from_users='me'))
 async def execute_script(event):
     message = event.message.message[7:]
@@ -95,7 +100,8 @@ async def execute_script(event):
         if dialog.is_user:
             await DEX.send_message(dialog.entity, message)
 
-@DEX.on(events.NewMessage(pattern="الاوامر" ,from_users='me'))
+
+@DEX.on(events.NewMessage(pattern="الاوامر", from_users='me'))
 async def _(event):
     await event.edit('''للنشر :
  اكتب x بعدها الوقت بين رسالة ورسالة بعدها عدد الرسائل
