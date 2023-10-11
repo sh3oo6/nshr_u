@@ -4,9 +4,8 @@ import asyncio
 import re, requests , os
 
 try:
-    cl = open('/root/plus/prift.txt', 'r')
-    client = cl.read().replace('\n', '')
-    cl.close()
+    client = open('/root/plus/prift.txt', 'r')
+    client.read().replace('\n', '')
     client_in_vps = f'/root/session/{client}'
     DEX = TelegramClient(client_in_vps, 22160733, 'c95e81b40eba3404ac130f4a9f235e4c')
     DEX.connect()
