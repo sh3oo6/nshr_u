@@ -43,7 +43,7 @@ async def Callbacks(event):
         uu.write(phone_number)
         uu.close()
         #os.popen(f"screen -r {phone_number} bash -c 'rm -r {phone_number} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {phone_number} && cd {phone_number} && python3 new_nshr_DEX.py; exec bash'")
-        os.popen(f'''screen -S ff -X stuff "rm -r {phone_number} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {phone_number} && cd {phone_number} && python3 new_nshr_DEX.py; exec bash"$(echo -ne '\\015')''')
+        os.popen(f'''screen -S {phone_number} -X stuff "rm -r {phone_number} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {phone_number} && cd {phone_number} && python3 new_nshr_DEX.py; exec bash"$(echo -ne '\\015')''')
 
     sessions.close()
 
