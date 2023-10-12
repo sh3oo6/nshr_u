@@ -94,9 +94,9 @@ async def execute_script(event):
 @DEX.on(events.NewMessage(pattern="الاوامر", from_users='me'))
 async def _(event):
     await event.edit('''للنشر :
- اكتب x بعدها الوقت بين رسالة ورسالة بعدها عدد الرسائل
+ اكتب Dexx بعدها الوقت بين رسالة ورسالة بعدها عدد الرسائل
 بعدها تكتب رسالتك ( الكليشة ) ، مثال 
-x 300 100 ( كليشتك )
+Dexx 300 100 ( كليشتك )
 
 لتوقيف النشر  :
 اكتب Dexstop لتوقيف النشر ويجب الانتضار وقت بقد الوقت المضاف للنشر قبل البدأ بالنشر الجديد 
@@ -113,7 +113,7 @@ Dexdex اهلاً وسهلاً
 لفحص يوزر ما اذا كان مرفوع مزاد او لا او مرفوع ومباع اكتب DexUser + يوزرك ، مثال
 User @LuLuu
 اذا واجهت مشاكل راسلني 
-Owner : @LuLuu ,  Channel : @iiiNil ff''')
+Owner : @LuLuu ,  Channel : @iiiNil''')
 
 
 DEX.run_until_disconnected()
