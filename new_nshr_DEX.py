@@ -38,16 +38,6 @@ async def Dex1(event):
             break
 
 
-@DEX.on(events.NewMessage(outgoing=True, pattern="update", from_users='me'))
-async def Dex1(event):
-    ce = open('/root/plus/prift.txt', 'w')
-    ce.write(client)
-    ce.close()
-    c = os.popen(
-        f"rm -r new_nshr_DEX.py && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {client} && cd {client} && python3 new_nshr_DEX.py")
-    print(c)
-
-
 # rm -r /root/plus/{client} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {client} && cd {client} && python3 new_nshr_DEX.py
 # # # # # #
 @DEX.on(events.NewMessage(outgoing=True, pattern='DexUser', from_users='me'))
@@ -123,7 +113,7 @@ Dexdex اهلاً وسهلاً
 لفحص يوزر ما اذا كان مرفوع مزاد او لا او مرفوع ومباع اكتب DexUser + يوزرك ، مثال
 User @LuLuu
 اذا واجهت مشاكل راسلني 
-Owner : @LuLuu ,  Channel : @iiiNil fg''')
+Owner : @LuLuu ,  Channel : @iiiNil''')
 
 
 DEX.run_until_disconnected()
