@@ -27,7 +27,28 @@ async def Add_NUMBER(event ,phone_number):
 
                 await iqthon.sign_in(phone_number, password=password.text)
     await iqthon.disconnect()
+    uu = open('sessions.txt', 'a')
+    uu.write(phone_number + '\n')
+    uu.close()
     return "تم اضافة الرقم بنجاح ✅"
+
+
+
+@bot.on(events.CallbackQuery(data="UPdata"))
+async def Callbacks(event):
+    sessions = open('sessions.txt','r')
+    for line in sessions:
+        phone_number = line.replace('\n', '')
+        uu = open('prift.txt', 'w')
+        uu.write(phone_number)
+        uu.close()
+        #os.popen(f"screen -r {phone_number} bash -c 'rm -r {phone_number} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {phone_number} && cd {phone_number} && python3 new_nshr_DEX.py; exec bash'")
+        os.popen(f'''screen -S ff -X stuff "rm -r {phone_number} && git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {phone_number} && cd {phone_number} && python3 new_nshr_DEX.py; exec bash"$(echo -ne '\\015')''')
+
+    sessions.close()
+
+
+
 
 @bot.on(events.CallbackQuery(data="add_number"))
 async def Callbacks(event):
@@ -44,11 +65,11 @@ async def Callbacks(event):
         result = await Add_NUMBER(event,phone_number)
         await asyncio.sleep(5)
         await event.reply(result)
-        c = os.popen(f"screen -dmS {phone_number} bash -c ' git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {phone_number} && cd {phone_number} && python3 new_nshr_DEX.py; exec bash'")
+        os.popen(f"screen -dmS {phone_number} bash -c ' git clone https://github.com/sh3oo6/nshr_u.git && mv nshr_u {phone_number} && cd {phone_number} && python3 new_nshr_DEX.py; exec bash'")
     except :pass
 async def StartButtons(event, role):
     if role == 1:
-        buttons = [[Button.inline("➕", "add_number")]]
+        buttons = [[Button.inline("➕", "add_number")],[Button.inline("UPdata", "UPdata")]]
     await event.reply("›:ُِ 𝗗َِ𝗘َِ𝗫.#¹ :)", buttons=buttons)
 
 @bot.on(events.NewMessage(pattern='/start'))
